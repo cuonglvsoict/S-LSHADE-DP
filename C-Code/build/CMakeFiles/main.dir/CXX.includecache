@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cuonglv/Desktop/2022-SO-BO/C-Code/de.h
+stdlib.h
+-
+iostream
+-
+iomanip
+-
+string.h
+-
+vector
+-
+math.h
+-
+
+/home/cuonglv/Desktop/2022-SO-BO/C-Code/main.cpp
+fstream
+-
+iomanip
+-
+sstream
+-
+de.h
+/home/cuonglv/Desktop/2022-SO-BO/C-Code/de.h
+
