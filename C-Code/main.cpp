@@ -66,16 +66,16 @@ int main(int argc, char **argv)
       seed_ind %= 1000;
       srand(random_seeds[seed_ind]);
 
-      searchAlgorithm *alg = new LSHADE_DP();
+      searchAlgorithm *alg = new S_LSHADE_DP();
       bsf_fitness_array[j] = alg->run(&fitness_memory[j][0]);
       cout << j + 1 << "th run, "
            << "error value = " << bsf_fitness_array[j] << endl;
     }
 
-    // // print results to file
-    stringstream file_name;
-    file_name << "./../../LSHADE-DP/LSHADE-DP_" << g_function_number << "_" << g_problem_size << ".txt";
-    print_results(file_name.str());
+    // print results to file
+    // stringstream file_name;
+    // file_name << "./../../LSHADE-DP/LSHADE-DP_" << g_function_number << "_" << g_problem_size << ".txt";
+    // print_results(file_name.str());
 
     for (int j = 0; j < NUM_RUN; j++)
       mean_bsf_fitness += bsf_fitness_array[j];

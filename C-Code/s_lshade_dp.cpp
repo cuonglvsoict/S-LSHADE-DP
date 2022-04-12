@@ -459,55 +459,6 @@ void S_LSHADE_DP::operateCurrentToPBest1BinWithArchive(const vector<Individual> 
   modifySolutionWithParentMedium(child, pop[target]);
 }
 
-void S_LSHADE_DP::operatePBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count)
-{
-  int r1, r2;
-
-  do
-  {
-    r1 = rand() % pop_size;
-  } while (r1 == target);
-  do
-  {
-    r2 = rand() % (pop_size + arc_ind_count);
-  } while ((r2 == target) || (r2 == r1));
-
-  int random_variable = rand() % problem_size;
-
-  if (r2 >= pop_size)
-  {
-    r2 -= pop_size;
-    for (int i = 0; i < problem_size; i++)
-    {
-      if ((randDouble() < cross_rate) || (i == random_variable))
-      {
-        child[i] = pop[p_best_individual][i] + scaling_factor * (pop[r1][i] - archive[r2][i]);
-      }
-      else
-      {
-        child[i] = pop[target][i];
-      }
-    }
-  }
-  else
-  {
-    for (int i = 0; i < problem_size; i++)
-    {
-      if ((randDouble() < cross_rate) || (i == random_variable))
-      {
-        child[i] = pop[p_best_individual][i] + scaling_factor * (pop[r1][i] - pop[r2][i]);
-      }
-      else
-      {
-        child[i] = pop[target][i];
-      }
-    }
-  }
-
-  //If the mutant vector violates bounds, the bound handling method is applied
-  modifySolutionWithParentMedium(child, pop[target]);
-}
-
 void S_LSHADE_DP::operateTarget1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count)
 {
   int r1, r2;

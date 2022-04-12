@@ -1,3 +1,0 @@
-/home/cuonglv/Desktop/2022-SO-BO/C-Code/build/CMakeFiles/rebuild_cache.dir
-/home/cuonglv/Desktop/2022-SO-BO/C-Code/build/CMakeFiles/edit_cache.dir
-/home/cuonglv/Desktop/2022-SO-BO/C-Code/build/CMakeFiles/main.dir

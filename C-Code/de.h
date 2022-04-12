@@ -120,61 +120,12 @@ protected:
   int count_fes;
 };
 
-class LSHADE: public searchAlgorithm {
-public:
-  virtual Fitness run(double *fitness_memory);
-  void setSHADEParameters();
-  void reducePopulationWithSort(vector<Individual> &pop, vector<Fitness> &fitness);
-  void operateCurrentToPBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-  
-  int arc_size;
-  double arc_rate;
-  variable p_best_rate;
-  int memory_size;
-  int reduction_ind_num;
-};
-
-class S_LSHADE_target1: public searchAlgorithm {
-public:
-  virtual Fitness run(double *fitness_memory);
-  void setSHADEParameters();
-  void reducePopulationWithSort(vector<Individual> &pop, vector<Fitness> &fitness);
-  void operateTarget1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-
-  int arc_size;
-  double arc_rate;
-  variable p_best_rate;
-  int memory_size;
-  int reduction_ind_num;
-};
-
 class S_LSHADE_DP: public searchAlgorithm {
 public:
   virtual Fitness run(double *fitness_memory);
   void setSHADEParameters();
   void reducePopulationWithSort(vector<Individual> &pop, vector<Fitness> &fitness, vector<int> &stagnation);
   void operateCurrentToPBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-  void operatePBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-  void operateTarget1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-
-  int arc_size;
-  double arc_rate;
-  variable p_best_rate;
-  int memory_size;
-  int reduction_ind_num;
-
-  int NG = 20;
-  int M = 2;
-  double gamma = 0.3;
-};
-
-class LSHADE_DP: public searchAlgorithm {
-public:
-  virtual Fitness run(double *fitness_memory);
-  void setSHADEParameters();
-  void reducePopulationWithSort(vector<Individual> &pop, vector<Fitness> &fitness, vector<int> &stagnation);
-  void operateCurrentToPBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
-  void operatePBest1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, int &p_best_individual, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
   void operateTarget1BinWithArchive(const vector<Individual> &pop, Individual child, int &target, variable &scaling_factor, variable &cross_rate, const vector<Individual> &archive, int &arc_ind_count);
 
   int arc_size;
